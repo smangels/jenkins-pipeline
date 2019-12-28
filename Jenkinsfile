@@ -4,6 +4,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
+				sh 'sleep 10'
 				sh 'mkdir -p out/'
 				sh 'touch out/file2.txt'
 			}
