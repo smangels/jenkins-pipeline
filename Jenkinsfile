@@ -4,7 +4,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
-				sh 'sleep 10'
+				sh 'sleep 3'
 				sh 'mkdir -p out/'
 				sh 'echo $(date +"%T") > out/file2.txt'
 			}
