@@ -13,7 +13,6 @@ pipeline {
 			steps {
 				echo 'Testing...'
 				archiveArtifacts artifacts: '**/out/*.txt', fingerprint: true
-
 			}
 		}
 		stage('Deploy') {
