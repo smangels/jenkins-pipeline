@@ -6,7 +6,7 @@ pipeline {
 				echo 'Building...'
 				sh 'sleep 10'
 				sh 'mkdir -p out/'
-				sh 'touch out/file2.txt'
+				sh 'echo $(date +"%T") out/file2.txt'
 			}
 		}
 		stage('Test') {
