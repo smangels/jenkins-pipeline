@@ -4,19 +4,19 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
+				sh 'mkdir -p out/'
+				sh 'touch out/file2.txt'
 			}
 		}
 		stage('Test') {
 			steps {
 				echo 'Testing...'
-				sh 'mkdir -p out/'
-				sh 'touch out/file2.txt'
+				archiveArtifacts artifacts: '**/out/*.txt', fingerprint: true
 			}
 		}
 		stage('Deploy') {
 			steps {
 				echo 'Deploy Project...'
-				sh 'tar czf Archive.tar.gz out/'
 			}
 		}
 	}
