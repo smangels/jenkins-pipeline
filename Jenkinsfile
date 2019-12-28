@@ -13,11 +13,13 @@ pipeline {
 			steps {
 				echo 'Testing...'
 				archiveArtifacts artifacts: '**/out/*.txt', fingerprint: true
+
 			}
 		}
 		stage('Deploy') {
 			steps {
 				echo 'Deploy Project...'
+				cleanWs()
 			}
 		}
 	}
